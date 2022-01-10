@@ -3,75 +3,75 @@ import { Machine } from "./machine";
 export const MACHINES: Machine [] = [
   // Håndvask
 {
-  id:"1",
+  code:"1",
   name:'Håndvask',
   temperature: 30,
   time: 20
 },
 {
-  id:"2",
+  code:"2",
   name:'Håndvask',
   temperature: 30,
   time: 20
 },
 {
-  id:"3",
+  code:"3",
   name:'Håndvask',
   temperature: 30,
   time: 20
 },
 {
-  id:"4",
+  code:"4",
   name:'Håndvask',
   temperature: 30,
   time: 20
 },
 // Tøyvask
 {
-  id:"5",
+  code:"5",
   name:'Tøyvask',
   temperature: 40,
   time: 60
 },
 {
-  id:"6",
+  code:"6",
   name:'Tøyvask',
   temperature: 40,
   time: 60
 },
 {
-  id:"7",
+  code:"7",
   name:'Tøyvask',
   temperature: 40,
   time: 60
 },
 {
-  id:"8",
+  code:"8",
   name:'Tøyvask',
   temperature: 40,
   time: 60
 },
 // Kokvask
 {
-  id:"9",
+  code:"9",
   name:'Kokvask',
   temperature: 60,
   time: 90
 },
 {
-  id:"10",
+  code:"10",
   name:'Kokvask',
   temperature: 60,
   time: 90
 },
 {
-  id:"11",
+  code:"11",
   name:'Kokvask',
   temperature: 60,
   time: 90
 },
 {
-  id:"12",
+  code:"12",
   name:'Kokvask',
   temperature: 60,
   time: 90

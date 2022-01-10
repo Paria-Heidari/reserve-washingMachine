@@ -1,5 +1,5 @@
 export class Machine{
-  id:string;
+  code: string;
   name: string;
   temperature: number;
   time: number;

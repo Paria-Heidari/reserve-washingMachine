@@ -9,21 +9,22 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-MongoClient.connect(`mongodb://${config.dbHost}`, {
-  userNewUrlParse: true,
-  usrUnifiedTopology: true,
-})
-  .then((res) => {
-    const db = res.db(config.dbName);
-    const collection = db.collection(config.dbCollection);
-    app.local[config.dbCollection]= collection;
-
-  })
 const config = require('./config');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require('cors');
 
-var app = express();
+// MongoClient.connect(`mongodb://${config.dbHost}`, {
+MongoClient.connect("mongodb://localhost:27017", {
+
+  userNewUrlParse: true,
+  usrUnifiedTopology: true,
+})
+  .then((client) => {
+    const db = client.db(config.dbName);
+    const collection = db.collection(config.dbCollection);
+    app.locals[config.dbCollection]= collection;
+
+  })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +35,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+
+// add middelware
+app.use((req, res, next) =>{
+  const collection = req.app.locals[config.dbCollection];
+  req.collection = collection;
+  next();
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

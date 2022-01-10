@@ -1,0 +1,55 @@
+<div *ngIf="loading" class="ui active centered inline loader"></div>
+
+<!-- <div *ngIf="successMsg" class="ui success message">
+    <i class="close icon"></i>
+    <div class="header">
+        Success!
+    </div>
+    <p>{{successMsg}}</p>
+</div> -->
+<div *ngIf="errMsg" class="ui error message">
+    <i class="close icon"></i>
+    <div class="header">
+     Error!
+    </div>
+    <p> {{errMsg}} </p>
+</div>
+
+
+<div *ngIf="!loading && !error">
+    <table mat-table  [dataSource]="allReserved" class="mat-elevation-z8">
+      <ng-content></ng-content>
+      <ng-container matColumnDef="reservedDate">
+        <th mat-header-cell *matHeaderCellDef> Reserved Date </th>
+        <td mat-cell *matCellDef="let reserved"> {{ reserved.reservedDate}} </td>
+      </ng-container>
+      <ng-container matColumnDef="machineId">
+        <th mat-header-cell *matHeaderCellDef> Machine Id </th>
+        <td mat-cell *matCellDef="let reserved"> {{reserved.machineId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="machineType">
+        <th mat-header-cell *matHeaderCellDef> machine Type </th>
+        <td mat-cell *matCellDef="let reserved"> {{reserved.machineType}} </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let reserved"> {{ reserved.name }} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let reserved"> {{ reserved.email }} </td>
+      </ng-container>
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef> PhoneNumber </th>
+        <td mat-cell *matCellDef="let reserved"> {{ reserved.phoneNumber }} </td>
+      </ng-container>
+      <ng-container matColumnDef="cancel">
+        <th mat-header-cell *matHeaderCellDef> Cancel </th>
+        <td mat-cell *matCellDef="let reserved"><button (click)="Confirm_removeHandler(reserved.id)" mat-stroked-button color="warn">Cancel</button></td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let allReserved; columns: columns"></tr>
+    </table>
+</div>

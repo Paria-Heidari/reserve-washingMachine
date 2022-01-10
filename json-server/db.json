@@ -1,0 +1,105 @@
+{
+  "reserved": [
+    {
+      "id": "xtDjIHs",
+      "reservedDate":  "2022-01-10T23:00:00.000Z",
+      "machineId": "1",
+      "machineType": "Håndvask",
+      "name":"test",
+      "email": "",
+      "phoneNumber":"2345677"
+       },
+    {
+      "reservedDate":  "2022-01-10T23:00:00.000Z",
+      "machineId": "9",
+      "machineType": "Kokvask",
+      "name":"test",
+      "email": "",
+      "phoneNumber":"2345677",
+      "id": "zvMYyo1"
+    },
+    {
+      "reservedDate":  "2022-01-10T23:00:00.000Z",
+      "machineId": "3",
+      "machineType": "Håndvask",
+      "name":"test3",
+      "email": "",
+      "phoneNumber":"2345677",
+      "id": "sZHwHUt"
+    }
+  ],
+  "machines": [
+    {
+      "code": "1",
+      "name": "Håndvask",
+      "temperature": 30,
+      "time": 20
+    },
+    {
+      "code": "2",
+      "name": "Håndvask",
+      "temperature": 30,
+      "time": 20
+    },
+    {
+      "code": "3",
+      "name": "Håndvask",
+      "temperature": 30,
+      "time": 20
+    },
+    {
+      "code": "4",
+      "name": "Håndvask",
+      "temperature": 30,
+      "time": 20
+    },
+    {
+      "code": "5",
+      "name": "Tøyvask",
+      "temperature": 40,
+      "time": 60
+    },
+    {
+      "code": "6",
+      "name": "Tøyvask",
+      "temperature": 40,
+      "time": 60
+    },
+    {
+      "code": "7",
+      "name": "Tøyvask",
+      "temperature": 40,
+      "time": 60
+    },
+    {
+      "code": "8",
+      "name": "Tøyvask",
+      "temperature": 40,
+      "time": 60
+    },
+    {
+      "code": "9",
+      "name": "Kokvask",
+      "temperature": 60,
+      "time": 90
+    },
+    {
+      "code": "10",
+      "name": "Kokvask",
+      "temperature": 60,
+      "time": 90
+    },
+    {
+      "code": "11",
+      "name": "Kokvask",
+      "temperature": 60,
+      "time": 90
+    },
+    {
+      "code": "12",
+      "name": "Kokvask",
+      "temperature": 60,
+      "time": 90
+    }
+  ]
+}
