@@ -1,80 +1,279 @@
-import { Machine } from "./machine";
-
+import { Machine } from  './machine' ;
 export const MACHINES: Machine [] = [
-  // Håndvask
-{
-  code:"1",
-  name:'Håndvask',
-  temperature: 30,
-  time: 20
-},
-{
-  code:"2",
-  name:'Håndvask',
-  temperature: 30,
-  time: 20
-},
-{
-  code:"3",
-  name:'Håndvask',
-  temperature: 30,
-  time: 20
-},
-{
-  code:"4",
-  name:'Håndvask',
-  temperature: 30,
-  time: 20
-},
-// Tøyvask
-{
-  code:"5",
-  name:'Tøyvask',
-  temperature: 40,
-  time: 60
-},
-{
-  code:"6",
-  name:'Tøyvask',
-  temperature: 40,
-  time: 60
-},
-{
-  code:"7",
-  name:'Tøyvask',
-  temperature: 40,
-  time: 60
-},
-{
-  code:"8",
-  name:'Tøyvask',
-  temperature: 40,
-  time: 60
-},
-// Kokvask
-{
-  code:"9",
-  name:'Kokvask',
-  temperature: 60,
-  time: 90
-},
-{
-  code:"10",
-  name:'Kokvask',
-  temperature: 60,
-  time: 90
-},
-{
-  code:"11",
-  name:'Kokvask',
-  temperature: 60,
-  time: 90
-},
-{
-  code:"12",
-  name:'Kokvask',
-  temperature: 60,
-  time: 90
-}
-
+    {
+      "machineId": "1",
+      "washingPrograms":[
+        {
+         "code": "1",
+         "name": "Håndvask",
+         "temperature": 30,
+         "time": 20
+       },
+       {
+         "code": "2",
+         "name": "Tøyvask",
+         "temperature": 40,
+         "time": 60
+       },
+       {
+         "code": "3",
+         "name": "Kokvask",
+         "temperature": 60,
+         "time": 90
+       }
+      ]
+    },
+    {
+      "machineId": "2",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "3",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "4",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "5",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "6",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "7",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "8",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "9",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "10",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "11",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+    },
+    {
+      "machineId": "12",
+      "washingPrograms":[
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
+  }
 ]

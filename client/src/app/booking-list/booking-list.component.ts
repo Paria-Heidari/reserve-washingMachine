@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { mergeMap } from 'rxjs/operators';
 import {Reserved} from '../shared/reserved';
 import {ReservedService} from '../services/reserved.service';
-import Swal ,{SweetAlertOptions}from 'sweetalert2/dist/sweetalert2.js';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { DatePipe } from '@angular/common'
 import { GridModule } from '@progress/kendo-angular-grid';
 import { Observable } from "rxjs";
@@ -30,7 +30,7 @@ export class BookingListComponent implements OnInit {
   public allReserved: Reserved[] = [];
   pipe = new DatePipe('en-US');
 
-  public columns = ['reservedDate', 'machineId', 'machineType', 'name', 'email','phoneNumber', 'cancel'];
+  public columns = ['reservedDate', 'Time', 'machineType', 'name', 'email','phoneNumber', 'cancel'];
 
   constructor(
     private reservedService:ReservedService,

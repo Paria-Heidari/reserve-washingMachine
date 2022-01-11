@@ -1,6 +1,6 @@
+import { WashingPrograms } from './washingPrograms';
+
 export class Machine{
-  code: string;
-  name: string;
-  temperature: number;
-  time: number;
+  machineId: string;
+  washingPrograms: WashingPrograms[];
 }

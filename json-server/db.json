@@ -1,105 +1,398 @@
 {
   "reserved": [
     {
-      "id": "xtDjIHs",
-      "reservedDate":  "2022-01-10T23:00:00.000Z",
-      "machineId": "1",
-      "machineType": "Håndvask",
-      "name":"test",
-      "email": "",
-      "phoneNumber":"2345677"
-       },
-    {
-      "reservedDate":  "2022-01-10T23:00:00.000Z",
-      "machineId": "9",
-      "machineType": "Kokvask",
-      "name":"test",
-      "email": "",
-      "phoneNumber":"2345677",
-      "id": "zvMYyo1"
+      "reservedDate": "2022-01-12T23:00:00.000Z",
+      "machineType": "Håndvask/1",
+      "machineTime": "09:00",
+      "name": "Paria  ",
+      "email": "t@kjsdkjlsk.no",
+      "phoneNumber": 2332333,
+      "id": "0OwOJbT"
     },
     {
-      "reservedDate":  "2022-01-10T23:00:00.000Z",
-      "machineId": "3",
-      "machineType": "Håndvask",
-      "name":"test3",
-      "email": "",
-      "phoneNumber":"2345677",
-      "id": "sZHwHUt"
+      "reservedDate": "2022-01-12T23:00:00.000Z",
+      "machineType": "Håndvask/1",
+      "machineTime": "09:30",
+      "name": "Test",
+      "email": "t@kjsdkjlsk.no",
+      "phoneNumber": 23,
+      "id": "hY4ILcK"
+    },
+    {
+      "reservedDate": "2022-01-13T23:00:00.000Z",
+      "machineType": "Kokvask/9",
+      "machineTime": "",
+      "name": "Testq",
+      "phoneNumber": 222,
+      "id": "-ly6LIi"
+    },
+    {
+      "reservedDate": "2022-01-12T23:00:00.000Z",
+      "machineType": "Håndvask/2",
+      "machineTime": "11:00",
+      "name": "Paria  ",
+      "email": "t@kjsdkjlsk.no",
+      "phoneNumber": 4,
+      "id": "7p9JQNQ"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Kokvask/11",
+      "machineTime": "14:00",
+      "name": "Pa",
+      "email": "hg",
+      "phoneNumber": 54,
+      "id": "JkInaEm"
+    },
+    {
+      "reservedDate": "2022-01-14",
+      "machineType": "Tøyvask/5",
+      "machineTime": "11:20",
+      "name": "Paria   ",
+      "email": "f",
+      "phoneNumber": 3,
+      "id": "pQOV6Ln"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Håndvask/2",
+      "machineTime": "09:30",
+      "name": "d",
+      "email": "d",
+      "phoneNumber": 2,
+      "id": "sd49ZUx"
+    },
+    {
+      "reservedDate": "2022-01-26",
+      "machineType": "Håndvask/1",
+      "machineTime": "10:30",
+      "name": "Paria   ",
+      "email": "dd",
+      "phoneNumber": 22,
+      "id": "EWdyz8f"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Håndvask/1",
+      "machineTime": "10:30",
+      "name": "Paria  ",
+      "email": "yyy",
+      "phoneNumber": 46,
+      "id": "8fi5bs8"
+    },
+    {
+      "reservedDate": "2022-01-28",
+      "machineType": "Tøyvask/5",
+      "machineTime": "11:20",
+      "name": "f",
+      "email": "d",
+      "phoneNumber": 2,
+      "id": "d-B_kAC"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Håndvask/4",
+      "machineTime": "10:00",
+      "name": "d",
+      "email": "w",
+      "phoneNumber": 5,
+      "id": "lWxRvbF"
+    },
+    {
+      "reservedDate": "2022-01-12",
+      "machineType": "Kokvask/1",
+      "machineTime": "10:40",
+      "name": "b",
+      "email": "w",
+      "phoneNumber": 4,
+      "id": "x5XuGn8"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Tøyvask/1",
+      "machineTime": "10:10",
+      "name": "n",
+      "email": "e",
+      "phoneNumber": 7,
+      "id": "8DNpg6Y"
     }
   ],
   "machines": [
     {
-      "code": "1",
-      "name": "Håndvask",
-      "temperature": 30,
-      "time": 20
+      "machineId": "1",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "2",
-      "name": "Håndvask",
-      "temperature": 30,
-      "time": 20
+      "machineId": "2",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "3",
-      "name": "Håndvask",
-      "temperature": 30,
-      "time": 20
+      "machineId": "3",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "4",
-      "name": "Håndvask",
-      "temperature": 30,
-      "time": 20
+      "machineId": "4",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "5",
-      "name": "Tøyvask",
-      "temperature": 40,
-      "time": 60
+      "machineId": "5",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "6",
-      "name": "Tøyvask",
-      "temperature": 40,
-      "time": 60
+      "machineId": "6",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "7",
-      "name": "Tøyvask",
-      "temperature": 40,
-      "time": 60
+      "machineId": "7",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "8",
-      "name": "Tøyvask",
-      "temperature": 40,
-      "time": 60
+      "machineId": "8",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "9",
-      "name": "Kokvask",
-      "temperature": 60,
-      "time": 90
+      "machineId": "9",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "10",
-      "name": "Kokvask",
-      "temperature": 60,
-      "time": 90
+      "machineId": "10",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "11",
-      "name": "Kokvask",
-      "temperature": 60,
-      "time": 90
+      "machineId": "11",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     },
     {
-      "code": "12",
-      "name": "Kokvask",
-      "temperature": 60,
-      "time": 90
+      "machineId": "12",
+      "washingPrograms": [
+        {
+          "code": "1",
+          "name": "Håndvask",
+          "temperature": 30,
+          "time": 20
+        },
+        {
+          "code": "2",
+          "name": "Tøyvask",
+          "temperature": 40,
+          "time": 60
+        },
+        {
+          "code": "3",
+          "name": "Kokvask",
+          "temperature": 60,
+          "time": 90
+        }
+      ]
     }
   ]
 }

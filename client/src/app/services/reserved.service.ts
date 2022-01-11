@@ -23,22 +23,9 @@ export class ReservedService {
     return this.http.get<Reserved[]>(`${this.BASE_URL}/reserved`)
   }
 
-  createReservation(
-    // machineId:string,
-    // machineType: string,
-    name: string,
-    email:string,
-    // phoneNumber: string,
-    reservedDate:string ): Observable<Reserved> {
-    return this.http.post<Reserved>(`${this.BASE_URL}/reserved`,
-    {
-    // machineId,
-    // machineType,
-    name,
-    email,
-    // phoneNumber,
-    reservedDate}
-    )}
+  createReservation(formValues): Observable<Reserved> {
+    return this.http.post<Reserved>(`${this.BASE_URL}/reserved`,formValues)}
+
 
   cancelReserved(id:string): Observable<any>{
     return this.http.delete(`${this.BASE_URL}/reserved/${id}`);

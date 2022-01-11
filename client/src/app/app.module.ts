@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material';
+
 import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
 import { InputsModule } from "@progress/kendo-angular-inputs";
 import { LabelModule } from "@progress/kendo-angular-label";
@@ -27,8 +28,8 @@ import {
   MatNativeDateModule,
   MatToolbarModule,
 } from '@angular/material';
-import { ButtonsModule } from '@progress/kendo-angular-buttons';
-
+import { UserComponent } from './user/user.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     HeaderComponent,
     HomeComponent,
     ReservedComponent,
-    BookingListComponent
+    BookingListComponent,
+    UserComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +58,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     MatToolbarModule,
     ReactiveFormsModule,
     MatSelectModule,
-    DateInputsModule,
-    InputsModule,
-    ButtonsModule,
+    // DateInputsModule,
+    // InputsModule,
     // LabelModule,
     // IntlModule
   ],
