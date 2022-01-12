@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ReservedService} from '../services/reserved.service';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import * as moment from 'moment';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-
+import * as moment from 'moment';
+import { AuthComponent } from '../auth/auth.component';
 
 @Component({
   selector: 'app-reserved',
@@ -33,11 +33,19 @@ export class ReservedComponent implements OnInit {
   public name: string;
   public email: string;
   public phoneNumber: string;
-
+  static currentUserId= '';
+  availableButton;
   constructor(private reservedService: ReservedService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    //Static variable that is declered nside the Auth component
+    AuthComponent.authUserId;
+    // can check if user is not login, not allowed to rese
+    console.log(AuthComponent.authUserId == '');
+    if(AuthComponent.authUserId == ''){
+      this.availableButton = false;
+    }
 
     this.loadData();
     this.createForm();
@@ -81,10 +89,10 @@ export class ReservedComponent implements OnInit {
       });
   }
 
-    handleMetaSignalChange(machineT: string, event: any) {
-      if (event.isUserInput) {    // ignore on deselection of the previous option
-        this.type = machineT.substring(0, 3);
-      }
+  handleMachineTimeChange(machineT: string, event: any) {
+    if (event.isUserInput) {    // ignore on deselection of the previous option
+      this.type = machineT.substring(0, 3);
+    }
   }
 
   createForm() {
@@ -117,6 +125,7 @@ export class ReservedComponent implements OnInit {
     formGroup.reservedDate = moment.utc(formGroup.reservedDate).local().format('YYYY-MM-DD');
     this.reservedService.createReservation(formGroup)
     .subscribe(res =>{
+      ReservedComponent.currentUserId = AuthComponent.authUserId;
       // const reservedDate = new Date (res.reservedDate).toISOString();
       this.successedbox(this.reservedDate, this.machineType, this.machineTime);
     },
@@ -129,7 +138,7 @@ export class ReservedComponent implements OnInit {
     Swal.fire({
     position: 'top-end',
     icon: 'success',
-    title: 'Check your Enterance code in your Email',
+    title: 'Check your enterance/ QR code in your Email',
     text: `Your reservation is booked for ${machineType} on ${reservedDate} at ${machineTime}`,
     showConfirmButton: false,
     timer: 7000

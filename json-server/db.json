@@ -115,6 +115,15 @@
       "email": "e",
       "phoneNumber": 7,
       "id": "8DNpg6Y"
+    },
+    {
+      "reservedDate": "2022-01-13",
+      "machineType": "Tøyvask/2",
+      "machineTime": "11:20",
+      "name": "test user",
+      "email": "user",
+      "phoneNumber": 333,
+      "id": "MO-zINK"
     }
   ],
   "machines": [

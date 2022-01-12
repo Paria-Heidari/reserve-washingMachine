@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {GridModule} from "@progress/kendo-angular-grid";
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
-import { ReservedComponent } from './reserved/reserved.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { ReservedComponent } from './reserved/reserved.component';
+import {AuthComponent} from './auth/auth.component';
+import {AuthService} from './services/auth.service';
 
 import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
 import { InputsModule } from "@progress/kendo-angular-inputs";
@@ -28,8 +30,6 @@ import {
   MatNativeDateModule,
   MatToolbarModule,
 } from '@angular/material';
-import { UserComponent } from './user/user.component';
-import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { AuthComponent } from './auth/auth.component';
     HomeComponent,
     ReservedComponent,
     BookingListComponent,
-    UserComponent,
     AuthComponent
   ],
   imports: [
@@ -63,7 +62,7 @@ import { AuthComponent } from './auth/auth.component';
     // LabelModule,
     // IntlModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

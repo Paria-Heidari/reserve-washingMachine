@@ -51,7 +51,7 @@
       <mat-label>Machine Type</mat-label>
       <mat-select formControlName="machineType" required>
         <mat-option>--</mat-option>
-        <mat-option *ngFor="let type of allMachines" [value]="type" (onSelectionChange)="handleMetaSignalChange(type,$event);" >
+        <mat-option *ngFor="let type of allMachines" [value]="type" (onSelectionChange)="handleMachineTimeChange(type,$event);" >
           {{type}}
         </mat-option>
       </mat-select>

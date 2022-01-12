@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import AuthComponent from '../auth/auth.component';
+import { AuthComponent } from '../auth/auth.component';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,14 @@ import AuthComponent from '../auth/auth.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+
+    this.firstComponentFunction();
   }
 
+  firstComponentFunction(){
+    this.authService.onFirstComponentButtonClick();
+  }
 }

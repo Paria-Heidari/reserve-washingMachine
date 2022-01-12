@@ -4,18 +4,8 @@ import {Reserved} from '../shared/reserved';
 import {ReservedService} from '../services/reserved.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { DatePipe } from '@angular/common'
-import { GridModule } from '@progress/kendo-angular-grid';
-import { Observable } from "rxjs";
-import { PageSizeItem } from '@progress/kendo-angular-grid';
-// import { State } from "@progress/kendo-data-query";
-// import { Day } from "@progress/kendo-date-math";
-// // import * as moment from 'moment';
-// import {
-//     FormGroup,
-//     FormControl,
-//     Validators,
-//     FormBuilder,
-// } from "@angular/forms";
+import { AuthComponent } from '../auth/auth.component';
+import { ReservedComponent} from '../reserved/reserved.component';
 
 @Component({
   selector: 'app-booking-list',
@@ -24,12 +14,14 @@ import { PageSizeItem } from '@progress/kendo-angular-grid';
 })
 export class BookingListComponent implements OnInit {
 
+  checkedUser = false;
   public loading = true;
   public errMsg : string;
   public successMsg: string;
   public allReserved: Reserved[] = [];
   pipe = new DatePipe('en-US');
-
+  public allowedToCancell = false;
+  public loginF = false;
   public columns = ['reservedDate', 'Time', 'machineType', 'name', 'email','phoneNumber', 'cancel'];
 
   constructor(
@@ -39,7 +31,25 @@ export class BookingListComponent implements OnInit {
 
   ngOnInit() {
 
-    // Get Reserved
+    //Static variables that are declered nside the Auth component
+    AuthComponent.loginFlag;
+    AuthComponent.authUserId;
+    ReservedComponent.currentUserId;
+
+    if(AuthComponent.loginFlag){
+      this.loginF = true;
+    }
+    // check if current user
+    if (ReservedComponent.currentUserId == AuthComponent.authUserId){
+      this.allowedToCancell = true;
+    }
+
+    this.getReserved();
+
+  }
+
+  // Get Reserved
+  public getReserved(){
     this.reservedService.getReserved().subscribe(res =>{
       this.allReserved = res;
       this.loading= false;

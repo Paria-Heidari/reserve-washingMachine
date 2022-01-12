@@ -2,18 +2,17 @@
   <div class="ui teal inverted segment">
     <div class="ui inverted secondary pointing menu">
       <a routerLink="/" class="item">
+        Home
+      </a>
+      <a routerLink="/reserve" class="item">
         Reserve in WashIt
       </a>
       <a routerLink="/booking-list" class=" item">
         Booking List
       </a>
       <div class="item right floated ">
-        <button class="ui google submit button">
-          <i class="google icon"></i>
-          Sign In
-          <!-- <div class="g-signin2"></div> -->
-          <app-auth></app-auth>
-        </button>
+        <app-auth></app-auth>
+        <!-- <button class="ui submit button" (click)="firstComponentFunction()"></button> -->
       </div>
     </div>
   </div>

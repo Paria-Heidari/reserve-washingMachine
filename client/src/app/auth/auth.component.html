@@ -1,1 +1,10 @@
-<p>auth works!</p>
+<div>
+  <button (click)="onSignIn()" *ngIf="!this.isSignedIn" class="ui google submit button">
+    <i class="google icon"></i>
+    Sign In with Google
+  </button>
+  <button (click)="onSignOut()" *ngIf="this.isSignedIn" class="ui google submit button">
+    <i class="google icon"></i>
+    Sign Out
+  </button>
+</div>
