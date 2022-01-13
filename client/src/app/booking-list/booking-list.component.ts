@@ -22,7 +22,10 @@ export class BookingListComponent implements OnInit {
   pipe = new DatePipe('en-US');
   public allowedToCancell = false;
   public loginF = false;
+  waitingList: Boolean = false;
+
   public columns = ['reservedDate', 'Time', 'machineType', 'name', 'email','phoneNumber', 'cancel'];
+
 
   constructor(
     private reservedService:ReservedService,
@@ -43,9 +46,15 @@ export class BookingListComponent implements OnInit {
     if (ReservedComponent.currentUserId == AuthComponent.authUserId){
       this.allowedToCancell = true;
     }
-
     this.getReserved();
 
+  }
+  public valueChange(event){
+    if(event){
+      return this.getWaitingList();
+    }else {
+      return this.getReserved();
+    }
   }
 
   // Get Reserved
@@ -54,7 +63,7 @@ export class BookingListComponent implements OnInit {
       this.allReserved = res;
       this.loading= false;
       for (let i in this.allReserved){
-        this.allReserved[i].reservedDate = this.pipe.transform(this.allReserved[i].reservedDate, 'dd-MM-yyyy')
+        this.allReserved[i].reservedDate = this.pipe.transform(this.allReserved[i].reservedDate, 'dd-MM-yyyy');
       }
     },
     (err:ErrorEvent)=>{
@@ -95,6 +104,20 @@ export class BookingListComponent implements OnInit {
         )
       }
     })
+  }
+
+  // Get WaitingList
+  public getWaitingList(){
+    this.reservedService.getWaitingList().subscribe(res =>{
+      this.allReserved = res;
+
+      console.log(this.allReserved);
+      this.loading= false;
+    },
+    (err:ErrorEvent)=>{
+      this.errMsg = err.error.message;
+      this.loading = false;
+    });
   }
 
 }

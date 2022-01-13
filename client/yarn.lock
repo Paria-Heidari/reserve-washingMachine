@@ -6314,6 +6314,11 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-slide-toggle@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/ngx-slide-toggle/-/ngx-slide-toggle-0.1.1.tgz#30324a33d465c0eee0350eff93e63713660ccf53"
+  integrity sha512-ioVxfvBgKjCAxp+yvd38KnjEaBpFc+X6kCF4Exr/rlLFvnjdjMGxVDUqSR8hqMCIHa3OrwLXm4nXAp/id5BtzA==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

@@ -15,13 +15,20 @@ export class ReservedService {
 
    }
 
-   getMachine(): Observable<Machine[]> {
+  getMachine(): Observable<Machine[]> {
     return this.http.get<Machine[]>(`${this.BASE_URL}/machines`)
   }
 
   getReserved(): Observable<Reserved[]> {
     return this.http.get<Reserved[]>(`${this.BASE_URL}/reserved`)
   }
+
+  getWaitingList(): Observable<Reserved[]> {
+    return this.http.get<Reserved[]>(`${this.BASE_URL}/waiting`)
+  }
+
+  addedInWaitingList(formValues): Observable<Reserved> {
+    return this.http.post<Reserved>(`${this.BASE_URL}/waiting`,formValues)}
 
   createReservation(formValues): Observable<Reserved> {
     return this.http.post<Reserved>(`${this.BASE_URL}/reserved`,formValues)}

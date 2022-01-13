@@ -1,0 +1,12 @@
+.img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /*copyRight https://www.yankodesign.com/2020/04/16/this-front-load-washing-machines-door-slides-inwards-to-save-space-in-small-homes/ */
+  background-image: url("../../assets/washing_machin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden
+
+}
+

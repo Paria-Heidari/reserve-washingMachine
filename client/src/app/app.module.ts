@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ReservedComponent } from './reserved/reserved.component';
+import { SlideToggleModule } from 'ngx-slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+
 import {AuthComponent} from './auth/auth.component';
 import {AuthService} from './services/auth.service';
 
@@ -57,6 +60,8 @@ import {
     MatToolbarModule,
     ReactiveFormsModule,
     MatSelectModule,
+    SlideToggleModule,
+    MatSlideToggleModule
     // DateInputsModule,
     // InputsModule,
     // LabelModule,

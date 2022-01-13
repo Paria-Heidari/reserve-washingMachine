@@ -1,133 +1,114 @@
-
-<!-- Show the error Message -->
-<div *ngIf="errMsg" class="ui error message">
-  <i class="close icon"></i>
-  <div class="header">
-    Error!
-  </div>
-  <p> {{errMsg}} </p>
-</div>
-<div class="card bg-light" style="position:relative; background-color:rgb(253, 253, 155);  padding: 20px">
-  <div class="card-header">
-    <h3> Warnning!</h3>
-    <hr/>
-    - <strong>Use the code/ QR</strong>
-    <br/>
-        <p>Using the code/ QR that is sent in your email/ message to start the reserved machine. <br/>
-        The code can be used on the reserved DateTime and will be expired after 5 minutes, If not used!</p>
-    - <strong>Reserved time</strong>
-        <p>If you are not able to use your reserved time, please cancel it in this link <a target="_blank" href="http://localhost:4200/booking-list">Cancel your Reservation</a></p>
-  </div>
-</div>
-
-<div class="card-block">
-  <h5>
-      <strong> Types of Washing program: </strong><br/>
-      <hr/>
-      - Kokvask:<br/>
-          Temperature 60 degree<br/>
-          Length of the washing program: 90 minutes<br/>
-      <hr/>
-      - Tøyvask:<br/>
-          Temperature 40 degree<br/>
-          Length of the washing program: 60 minutes<br/>
-      <hr/>
-      - Håndvask:<br/>
-          Temperature 30 degree<br/>
-          Length of the washing program: 20 minutes<br/>
-  </h5>
-</div>
-<!-- Form -->
-<div class="container" novalidate>
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
-    <!-- reservedDate -->
-    <mat-form-field class="form-element" appearance="fill">
-      <input matInput formControlName="reservedDate" [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <!-- Machine Type  -->
-    <mat-form-field class="form-element" appearance="fill">
-      <mat-label>Machine Type</mat-label>
-      <mat-select formControlName="machineType" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let type of allMachines" [value]="type" (onSelectionChange)="handleMachineTimeChange(type,$event);" >
-          {{type}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- MachineTime Håndvask-->
-    <mat-form-field class="form-element" *ngIf="this.type=='Hån'" appearance="fill">
-      <mat-label>Machine Time</mat-label>
-      <mat-select formControlName="machineTime" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let time of mATimeFutureTime" [value]="time" >
-          {{time}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-     <!-- MachineTime Tøyvask-->
-     <mat-form-field class="form-element" *ngIf="this.type=='Tøy'" appearance="fill">
-      <mat-label>Machine Time</mat-label>
-      <mat-select formControlName="machineTime" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let time of mBTimeFutureTime" [value]="time" >
-          {{time}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-     <!-- MachineTime  Kokvask-->
-     <mat-form-field class="form-element" *ngIf="this.type=='Kok'" appearance="fill">
-      <mat-label>Machine Time</mat-label>
-      <mat-select formControlName="machineTime" required>
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let time of mCTimeFutureTime" [value]="time" >
-          {{time}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-      <!-- Name -->
-    <mat-form-field class="form-element" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="machineTime" [type]="text" placeholder="Your FullName" formControlName="name">
-    </mat-form-field>
-    <!-- Email -->
-    <mat-form-field class="form-element" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Your Email" formControlName="email">
-    </mat-form-field>
-    <!-- PhoneNumber -->
-    <mat-form-field class="form-element" appearance="fill">
-      <mat-label>PhoneNumber</mat-label>
-      <input matInput [type]="number" placeholder="Your PhoneNumber" formControlName="phoneNumber">
-    </mat-form-field>
-
-    <div class="form-element">
-      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid">Make Reserve</button>
+<div  class="container" >
+  <!-- Show the error Message -->
+  <div *ngIf="errMsg" class="ui error message">
+    <i class="close icon"></i>
+    <div class="header">
+      Error!
     </div>
-  </form>
+    <p> {{errMsg}} </p>
+  </div>
+  <div class="card bg-light">
+    <div class="card-header">
+      <h3> Warnning!</h3>
+      <hr/>
+      - <strong>Use the code/ QR</strong>
+      <br/>
+          <p>Using the code/ QR that is sent in your email/ message to start the reserved machine. <br/>
+          The code can be used on the reserved DateTime and will be expired after 15 minutes, If not used!</p>
+      - <strong>Reserved time</strong>
+          <p>If you are not able to use your reserved time, please cancel it in this link <a target="_blank" href="http://localhost:4200/booking-list">Cancel your Reservation</a></p>
+    </div>
+  </div>
+  <div class="card-block">
+        <h5>
+            <strong> Types of Washing program: </strong><br/>
+            <hr/>
+            - Kokvask:<br/>
+                Temperature 60 degree<br/>
+                Length of the washing program: 90 minutes<br/>
+            <hr/>
+            - Tøyvask:<br/>
+                Temperature 40 degree<br/>
+                Length of the washing program: 60 minutes<br/>
+            <hr/>
+            - Håndvask:<br/>
+                Temperature 30 degree<br/>
+                Length of the washing program: 20 minutes<br/>
+        </h5>
+  </div>
+  <!-- Toggle -->
+  <div class="grid-slide-toggle-material" style="margin:30px 50px 30px; color:rgb(223, 230, 230); font-size:medium ">
+    <mat-slide-toggle [(ngModel)]="waitingList" name="waitingList" >Register in the waiting list</mat-slide-toggle>
+  </div>
+    <!-- Form -->
+  <div novalidate>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)"  class="form">
+      <!-- reservedDate -->
+      <mat-form-field class="form-element" appearance="fill">
+        <input matInput formControlName="reservedDate" [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <!-- Machine Type  -->
+      <mat-form-field class="form-element" appearance="fill">
+        <mat-label>Machine Type</mat-label>
+        <mat-select formControlName="machineType" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let type of allMachines" [value]="type" (onSelectionChange)="handleMachineTimeChange(type,$event);" >
+            {{type}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- MachineTime Håndvask-->
+      <mat-form-field class="form-element" *ngIf="this.type=='Hån' && !waitingList" appearance="fill">
+        <mat-label>Machine Time</mat-label>
+        <mat-select formControlName="machineTime" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let time of mATimeFutureTime" [value]="time" >
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+        <!-- MachineTime Tøyvask-->
+        <mat-form-field class="form-element" *ngIf="this.type=='Tøy' && !waitingList" appearance="fill">
+        <mat-label>Machine Time</mat-label>
+        <mat-select formControlName="machineTime" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let time of mBTimeFutureTime" [value]="time" >
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+        <!-- MachineTime  Kokvask-->
+        <mat-form-field class="form-element" *ngIf="this.type=='Kok' && !waitingList" appearance="fill">
+        <mat-label>Machine Time</mat-label>
+        <mat-select formControlName="machineTime" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let time of mCTimeFutureTime" [value]="time" >
+            {{time}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+        <!-- Name -->
+      <mat-form-field class="form-element" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="machineTime" [type]="text" placeholder="Your FullName" formControlName="name">
+      </mat-form-field>
+      <!-- Email -->
+      <mat-form-field class="form-element" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Your Email" formControlName="email">
+      </mat-form-field>
+      <!-- PhoneNumber -->
+      <mat-form-field class="form-element" appearance="fill">
+        <mat-label>PhoneNumber</mat-label>
+        <input matInput [type]="number" placeholder="Your PhoneNumber" formControlName="phoneNumber">
+      </mat-form-field>
+
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid" *ngIf="!waitingList">Make Reserve</button>
+        <button mat-raised-button color="primary" type="submit" class="button"  *ngIf="waitingList">Add in WatingList</button>
+      </div>
+    </form>
 </div>
-
-
-<!-- <div class="form-container">
-
-  <form (submit)="createReservation()">
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input [(ngModel)]="name" name="name" matInput placeholder="Name">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <input [(ngModel)]="reservedDate" name="appointmentDate" matInput [matDatepicker]="picker" placeholder="Choose a date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <input [(ngModel)]="email" name="email" matInput placeholder="Email" type="email">
-      <mat-label>Email</mat-label>
-        <mat-error *ngIf="email?.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Make Appointment</button>
-  </form>
-</div> -->

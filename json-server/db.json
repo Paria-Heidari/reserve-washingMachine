@@ -1,4 +1,38 @@
 {
+  "waiting": [
+    {
+      "reservedDate": "2022-01-12T23:00:00.000Z",
+      "machineType": "Håndvask/1",
+      "name": "Paria  ",
+      "email": "t@kjsdkjlsk.no",
+      "phoneNumber": 2332333,
+      "id": "0OwOJbT"
+    },
+    {
+      "reservedDate": "2022-01-12T23:00:00.000Z",
+      "machineType": "Håndvask/1",
+      "name": "Test",
+      "email": "t@kjsdkjlsk.no",
+      "phoneNumber": 23,
+      "id": "hY4ILcK"
+    },
+    {
+      "reservedDate": "2022-01-13T23:00:00.000Z",
+      "machineType": "Kokvask/9",
+      "name": "Testq",
+      "phoneNumber": 222,
+      "id": "-ly6LIi"
+    },
+    {
+      "reservedDate": "2022-01-14",
+      "machineType": "Tøyvask/1",
+      "machineTime": "",
+      "name": "Paria",
+      "email": "Test@test.no",
+      "phoneNumber": 236589,
+      "id": "esP8Mon"
+    }
+  ],
   "reserved": [
     {
       "reservedDate": "2022-01-12T23:00:00.000Z",
@@ -19,14 +53,6 @@
       "id": "hY4ILcK"
     },
     {
-      "reservedDate": "2022-01-13T23:00:00.000Z",
-      "machineType": "Kokvask/9",
-      "machineTime": "",
-      "name": "Testq",
-      "phoneNumber": 222,
-      "id": "-ly6LIi"
-    },
-    {
       "reservedDate": "2022-01-12T23:00:00.000Z",
       "machineType": "Håndvask/2",
       "machineTime": "11:00",
@@ -43,15 +69,6 @@
       "email": "hg",
       "phoneNumber": 54,
       "id": "JkInaEm"
-    },
-    {
-      "reservedDate": "2022-01-14",
-      "machineType": "Tøyvask/5",
-      "machineTime": "11:20",
-      "name": "Paria   ",
-      "email": "f",
-      "phoneNumber": 3,
-      "id": "pQOV6Ln"
     },
     {
       "reservedDate": "2022-01-13",

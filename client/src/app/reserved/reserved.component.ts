@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ReservedService} from '../services/reserved.service';
+import { SlideToggleModule } from 'ngx-slide-toggle';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import * as moment from 'moment';
 import { AuthComponent } from '../auth/auth.component';
@@ -35,6 +36,8 @@ export class ReservedComponent implements OnInit {
   public phoneNumber: string;
   static currentUserId= '';
   availableButton;
+  waitingList: Boolean = false;
+
   constructor(private reservedService: ReservedService,
     private formBuilder: FormBuilder) { }
 
@@ -42,7 +45,6 @@ export class ReservedComponent implements OnInit {
     //Static variable that is declered nside the Auth component
     AuthComponent.authUserId;
     // can check if user is not login, not allowed to rese
-    console.log(AuthComponent.authUserId == '');
     if(AuthComponent.authUserId == ''){
       this.availableButton = false;
     }
@@ -110,8 +112,11 @@ export class ReservedComponent implements OnInit {
   onSubmit(formGroup) {
     this.post = formGroup;
     console.log(formGroup);
-
-    this.createReservation(formGroup);
+    if(this.waitingList){
+      this.addedInWaitingList(formGroup);
+    }else{
+      this.createReservation(formGroup);
+    }
   }
 
   createReservation(formGroup){
@@ -119,9 +124,7 @@ export class ReservedComponent implements OnInit {
     this.reservedDate = formGroup.reservedDate;
     this.machineType = formGroup.machineType;
     this.machineTime = formGroup.machineTime;
-    // this.name= formValues.name;
-    // this.email= formValues.email;
-    // this.phoneNumber= formValues.phoneNumber;
+
     formGroup.reservedDate = moment.utc(formGroup.reservedDate).local().format('YYYY-MM-DD');
     this.reservedService.createReservation(formGroup)
     .subscribe(res =>{
@@ -142,6 +145,33 @@ export class ReservedComponent implements OnInit {
     text: `Your reservation is booked for ${machineType} on ${reservedDate} at ${machineTime}`,
     showConfirmButton: false,
     timer: 7000
+  })
+  }
+
+  addedInWaitingList(formGroup){
+    this.errMsg = '';
+    this.reservedDate = formGroup.reservedDate;
+    this.machineType = formGroup.machineType;
+    this.machineTime = formGroup.machineTime;
+
+    formGroup.reservedDate = moment.utc(formGroup.reservedDate).local().format('YYYY-MM-DD');
+    this.reservedService.addedInWaitingList(formGroup)
+    .subscribe(res =>{
+      // const reservedDate = new Date (res.reservedDate).toISOString();
+      this.successedBoxWaiting(this.reservedDate, this.machineType);
+    },
+    (err:ErrorEvent)=>{
+      this.errMsg = err.error.message;
+    });
+  }
+  successedBoxWaiting(reservedDate, machineType){
+    Swal.fire({
+    // position: 'top-end',
+    icon: 'success',
+    title: 'Waiting List',
+    text: `Your are registered in the waiting list for ${machineType} on ${reservedDate}`,
+    showConfirmButton: false,
+    timer: 2000
   })
   }
 
